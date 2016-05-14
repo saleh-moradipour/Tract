@@ -1,5 +1,2 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<s:action name="showLoginPage" namespace="/login" executeResult="true" />
