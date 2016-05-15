@@ -11,7 +11,6 @@
     <title>Home page</title>
 </head>
 <body>
-<%--todo: it doesn't show username properly--%>
-Hello ${username}
+Hello ${requestScope.username}
 </body>
 </html>
