@@ -11,11 +11,12 @@
         </action>
         <action name="login" class="com.masal.LoginAction" method="m1">
             <result name="success">/WEB-INF/pages/welcome_user.jsp</result>
+            <result name="error">/WEB-INF/pages/login.jsp</result>
         </action>
-<!--
-        <action name="Welcome" class="com.mkyong.user.action.WelcomeUserAction">
-            <result name="SUCCESS">pages/welcome_user.jsp</result>
-        </action>
--->
+        <!--
+                <action name="Welcome" class="com.mkyong.user.action.WelcomeUserAction">
+                    <result name="SUCCESS">pages/welcome_user.jsp</result>
+                </action>
+        -->
     </package>
 </struts>
