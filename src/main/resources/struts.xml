@@ -13,10 +13,12 @@
             <result name="success">/WEB-INF/pages/welcome_user.jsp</result>
             <result name="error">/WEB-INF/pages/login.jsp</result>
         </action>
-        <!--
-                <action name="Welcome" class="com.mkyong.user.action.WelcomeUserAction">
-                    <result name="SUCCESS">pages/welcome_user.jsp</result>
-                </action>
-        -->
     </package>
+    <package name="links" namespace="/operation" extends="struts-default">
+        <action name="sell">
+            <result name="success">/WEB-INF/pages/sell.jsp</result>
+        </action>
+    </package>
+
+
 </struts>

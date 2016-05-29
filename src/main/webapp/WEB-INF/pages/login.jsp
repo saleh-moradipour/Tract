@@ -29,7 +29,7 @@
     </div>
     <div>
         Password:
-        <input type="password" name="pass">
+        &nbsp;&nbsp;<input type="password" name="pass">
     </div>
     <div>
         <input type="submit" value="login">
