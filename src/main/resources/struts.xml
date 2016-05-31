@@ -5,8 +5,8 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <package name="login" namespace="/login" extends="struts-default">
-        <action name="showLoginPage">
+    <package name="mada" namespace="/login" extends="struts-default">
+    <action name="showLoginPage">
             <result name="success">/WEB-INF/pages/login.jsp</result>
         </action>
         <action name="login" class="com.masal.LoginAction" method="m1">
@@ -17,6 +17,15 @@
     <package name="links" namespace="/operation" extends="struts-default">
         <action name="sell">
             <result name="success">/WEB-INF/pages/sell.jsp</result>
+        </action>
+    </package>
+    <package name="sell" namespace="/sell" extends="struts-default">
+        <action name="showSellPage">
+            <result name="success">/WEB-INF/pages/sell.jsp</result>
+        </action>
+        <action name="sell" class="com.masal.sell.ClassSell" method="m1">
+            <result name="success">/WEB-INF/pages/welcome_user.jsp</result>
+            <result name="error">/WEB-INF/pages/sell.jsp</result>
         </action>
     </package>
 

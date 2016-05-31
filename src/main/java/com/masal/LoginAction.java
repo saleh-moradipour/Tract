@@ -15,11 +15,15 @@ public class LoginAction extends ActionSupport {
     private String pass;
 
     public String m1() {
+
         if (username == null || username.equals("")) {
             addActionError("Username field must not be empty");
         }
         if (pass == null || pass.equals("")) {
             addActionError("Password field must not be empty");
+        }
+        if (username.equals("saleh") && pass.equals("123")) {
+            return SUCCESS;
         }
         if (getActionErrors().size() > 0) {
             return ERROR;
