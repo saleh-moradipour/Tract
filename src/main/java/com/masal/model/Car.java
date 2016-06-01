@@ -4,28 +4,28 @@ package com.masal.model;
  * Created by Yeganeh on 6/1/16.
  */
 public class Car {
-    private String carname;
-    private String model;
+    private String carName;
+    private int model;
     private String fuel;
-    private String usekilometer;
+    private int usedInKilometer;
     private String gearbox;
-    private String price;
-    private String phonenumber;
+    private long price;
+    private String phoneNumber;
     private String explanation;
 
-    public String getCarname() {
-        return carname;
+    public String getCarName() {
+        return carName;
     }
 
-    public void setCarname(String carname) {
-        this.carname = carname;
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
-    public String getModel() {
+    public int getModel() {
         return model;
     }
 
-    public void setModel(String model) {
+    public void setModel(int model) {
         this.model = model;
     }
 
@@ -37,12 +37,12 @@ public class Car {
         this.fuel = fuel;
     }
 
-    public String getUsekilometer() {
-        return usekilometer;
+    public int getUsedInKilometer() {
+        return usedInKilometer;
     }
 
-    public void setUsekilometer(String usekilometer) {
-        this.usekilometer = usekilometer;
+    public void setUsedInKilometer(int usedInKilometer) {
+        this.usedInKilometer = usedInKilometer;
     }
 
     public String getGearbox() {
@@ -53,20 +53,20 @@ public class Car {
         this.gearbox = gearbox;
     }
 
-    public String getPrice() {
+    public long getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getExplanation() {

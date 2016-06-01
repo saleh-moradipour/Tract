@@ -28,7 +28,7 @@
     <div>
         <p>
             Car name :
-            <select name="carname" size="1">
+            <select name="carName" size="1">
                 <option></option>
                 <option value="benz">Benz</option>
                 <option value="ford">Ford</option>
@@ -55,7 +55,7 @@
     </div>
     <div>
         <p>
-            Usekilometer :&nbsp;<input type="int" name="usekilometer">
+            Usekilometer :&nbsp;<input type="int" name="usedInKilometer">
         </p>
     </div>
     <div>
@@ -75,7 +75,7 @@
     </div>
     <div>
         <p>
-            Phone number :&nbsp;<input type="text" name="phonenumber">
+            Phone number :&nbsp;<input type="text" name="phoneNumber">
         </p>
     </div>
     <div>

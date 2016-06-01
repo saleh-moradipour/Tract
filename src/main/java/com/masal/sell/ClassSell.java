@@ -1,5 +1,7 @@
 package com.masal.sell;
 
+import com.masal.model.Car;
+import com.masal.service.CarRegistration;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.math.BigDecimal;
@@ -8,20 +10,19 @@ import java.math.BigDecimal;
  * Created by Yeganeh on 5/29/16.
  */
 public class ClassSell extends ActionSupport {
-    private String carname;
+    private String carName;
     private String model;
     private String fuel;
-    private String usekilometer;
+    private String usedInKilometer;
     private String gearbox;
     private String price;
-    private String phonenumber;
+    private String phoneNumber;
     private String explanation;
 
     public String m1() {
-        boolean gearbox1;
         BigDecimal price1;
         int usekilometre1;
-        if (carname == null || carname.equals("") || model == null || model.equals("") || fuel == null || fuel.equals("") || usekilometer == null || usekilometer.equals("") || gearbox == null || gearbox.equals("") || price.equals("") || price == null || phonenumber == null || phonenumber.equals("")) {
+        if (carName == null || carName.equals("") || model == null || model.equals("") || fuel == null || fuel.equals("") || usedInKilometer == null || usedInKilometer.equals("") || gearbox == null || gearbox.equals("") || price.equals("") || price == null || phoneNumber == null || phoneNumber.equals("")) {
             addActionError("Fill in all fields!");
             return ERROR;
         }
@@ -34,32 +35,37 @@ public class ClassSell extends ActionSupport {
             addActionError("Wrong number for 'Price' plase enter bigest zirro!");
             return ERROR;
         }
-        usekilometre1 = Integer.parseInt(usekilometer);
+        usekilometre1 = Integer.parseInt(usedInKilometer);
         if (usekilometre1 < 0) {
             addActionError("Wrong number for 'Use kilometer' plase enter bigest zirro number!");
             return ERROR;
         }
-
-
-        if (gearbox.equals("Manual")) {
-            gearbox1 = false;
-        }
-        if (gearbox.equals("Automatic")) {
-            gearbox1 = true;
-        }
-        if (!(carname == null) || !(model == null) || !(fuel == null) || !usekilometer.equals("") || !(gearbox == "") || !(price == null) || !(phonenumber == null)) {
+        if (!(carName == null) || !(model == null) || !(fuel == null) || !usedInKilometer.equals("") || !(gearbox == "") || !(price == null) || !(phoneNumber == null)) {
             addActionMessage("Amaliyat sabt shod!");
         }
-        return SUCCESS;
+        CarRegistration carRegistration = new CarRegistration();
+        Car car = new Car();
+        car.setCarName(carName);
+        car.setModel(Integer.parseInt(model));
+        car.setFuel(fuel);
+        car.setUsedInKilometer(usekilometre1);
+        car.setGearbox(gearbox);
+        car.setPrice(price1.longValue());
+        car.setPhoneNumber(phoneNumber);
+        car.setExplanation(explanation);
+        if (carRegistration.registerCar(car)) {
+            return SUCCESS;
+        }
+        return ERROR;
     }
 
 
-    public String getCarname() {
-        return carname;
+    public String getCarName() {
+        return carName;
     }
 
-    public void setCarname(String carname) {
-        this.carname = carname;
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
     public String getModel() {
@@ -78,12 +84,12 @@ public class ClassSell extends ActionSupport {
         this.fuel = fuel;
     }
 
-    public String getUsekilometer() {
-        return usekilometer;
+    public String getUsedInKilometer() {
+        return usedInKilometer;
     }
 
-    public void setUsekilometer(String usekilometer) {
-        this.usekilometer = usekilometer;
+    public void setUsedInKilometer(String usedInKilometer) {
+        this.usedInKilometer = usedInKilometer;
     }
 
     public String getGearbox() {
@@ -102,12 +108,12 @@ public class ClassSell extends ActionSupport {
         this.price = price;
     }
 
-    public String getPhonenumber() {
-        return phonenumber;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getExplanation() {
