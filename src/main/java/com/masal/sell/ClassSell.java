@@ -16,7 +16,6 @@ public class ClassSell extends ActionSupport {
     private String price;
     private String phonenumber;
     private String explanation;
-    private String message;
 
     public String m1() {
         boolean gearbox1;
