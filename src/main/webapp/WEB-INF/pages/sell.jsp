@@ -29,6 +29,7 @@
         <p>
             Car name :
             <select name="carname" size="1">
+                <option></option>
                 <option value="benz">Benz</option>
                 <option value="ford">Ford</option>
                 <option value="Bmw">Bmw</option>
@@ -61,7 +62,7 @@
         <p>
             Gierbox :
             &nbsp;<select name="gearbox" size="1">
-            <option value="manual"></option>
+            <option></option>
             <option value="manual">Manual</option>
             <option value="automatic">Automatic</option>
         </select>
@@ -82,7 +83,7 @@
     </div>
     <div>
         <p>
-            <textarea name="message" rows="10" cols="30">
+            <textarea name="message" rows="10" cols="50">
             </textarea>
         </p>
     </div>

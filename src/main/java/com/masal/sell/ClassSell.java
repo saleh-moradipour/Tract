@@ -16,22 +16,23 @@ public class ClassSell extends ActionSupport {
     private String price;
     private String phonenumber;
     private String explanation;
+    private String message;
 
     public String m1() {
         boolean gearbox1;
         BigDecimal price1;
         int usekilometre1;
-        if (carname == null || model == null || fuel == null || usekilometer.equals("") || gearbox.equals("") || price == null || phonenumber == null) {
+        if (carname == null || carname.equals("") || model == null || model.equals("") || fuel == null || fuel.equals("") || usekilometer == null || usekilometer.equals("") || gearbox == null || gearbox.equals("") || price.equals("") || price == null || phonenumber == null || phonenumber.equals("")) {
             addActionError("Fill in all fields!");
             return ERROR;
         }
         if (Integer.parseInt(model) > 2016 && model.length() > 4) {
-            addActionError("wrong number,plase enter 'Model' 4-digit number!");
+            addActionError("Wrong number,plase enter 'Model' 4-digit number!");
             return ERROR;
         }
         price1 = new BigDecimal(price);
         if (price1.compareTo(price1.ZERO) <= 0) {
-            addActionError("wrong number for 'Price' plase enter bigest zirro!");
+            addActionError("Wrong number for 'Price' plase enter bigest zirro!");
             return ERROR;
         }
         usekilometre1 = Integer.parseInt(usekilometer);
