@@ -40,9 +40,6 @@ public class ClassSell extends ActionSupport {
             addActionError("Wrong number for 'Use kilometer' plase enter bigest zirro number!");
             return ERROR;
         }
-        if (!(carName == null) || !(model == null) || !(fuel == null) || !usedInKilometer.equals("") || !(gearbox == "") || !(price == null) || !(phoneNumber == null)) {
-            addActionMessage("Amaliyat sabt shod!");
-        }
         CarRegistration carRegistration = new CarRegistration();
         Car car = new Car();
         car.setCarName(carName);

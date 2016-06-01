@@ -5,6 +5,7 @@ import com.masal.model.Car;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -15,6 +16,7 @@ import java.sql.SQLException;
 public class CarRegistration {
 
     public boolean registerCar(Car car) {
+        int id = -1;
         String sql = "INSERT INTO CAR(name, model, fuel, used_in_kilometer, gearbox, price, phone_number, description) values(?,?,?,?,?,?,?,?)";
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         Connection connection = connectionManager.getConnection();
@@ -29,13 +31,16 @@ public class CarRegistration {
             preparedStatement.setLong(6, car.getPrice());
             preparedStatement.setString(7, car.getPhoneNumber());
             preparedStatement.setString(8, car.getExplanation());
-            result = preparedStatement.execute();
+            preparedStatement.execute();
+            ResultSet resultSet = preparedStatement.getGeneratedKeys();
+            resultSet.next();
+            id = resultSet.getInt(1);
             preparedStatement.close();
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return result;
+        return id != -1;
     }
 
 }
