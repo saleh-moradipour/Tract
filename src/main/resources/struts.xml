@@ -4,8 +4,8 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    <package name="mada" namespace="/login" extends="struts-default">
-        <action name="showLoginPage">
+    <package name="login" namespace="/login" extends="struts-default">
+    <action name="showLoginPage">
         <result name="success">/WEB-INF/pages/login.jsp</result>
         </action>
         <action name="login" class="com.masal.LoginAction" method="m1">
@@ -14,23 +14,17 @@
         </action>
     </package>
     <package name="links" namespace="/operation" extends="struts-default">
-        <action name="sell">
-            <result name="success">/WEB-INF/pages/sell.jsp</result>
+        <action name="select" class="com.masal.show_products.ShowProducts" method="selFrom">
+            <result name="success">/WEB-INF/pages/select.jsp</result>
         </action>
-        <action name="buy">
-            <result name="success">/WEB-INF/pages/buy.jsp</result>
+        <action name="search" class="com.masal.show_products.ShowProducts" method="searchCar">
+            <result name="success">/WEB-INF/pages/select.jsp</result>
         </action>
     </package>
     <package name="sell" namespace="/sell" extends="struts-default">
         <action name="sell" class="com.masal.sell.ClassSell" method="m1">
             <result name="success">/WEB-INF/pages/welcome_user.jsp</result>
             <result name="error">/WEB-INF/pages/sell.jsp</result>
-        </action>
-    </package>
-    <package name="buy" namespace="/buy" extends="struts-default">
-        <action name="buy" class="com.masal.buy.ClassBuy" method="buyBuy">
-            <result name="success">/WEB-INF/pages/welcome_user.jsp</result>
-            <result name="error">/WEB-INF/pages/buy.jsp</result>
         </action>
     </package>
 </struts>

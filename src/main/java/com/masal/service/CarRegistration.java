@@ -3,6 +3,7 @@ package com.masal.service;
 import com.masal.ConnectionManager;
 import com.masal.model.Car;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +21,6 @@ public class CarRegistration {
         String sql = "INSERT INTO CAR(name, model, fuel, used_in_kilometer, gearbox, price, phone_number, description) values(?,?,?,?,?,?,?,?)";
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         Connection connection = connectionManager.getConnection();
-        boolean result = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, car.getCarName());
@@ -28,7 +28,7 @@ public class CarRegistration {
             preparedStatement.setString(3, car.getFuel());
             preparedStatement.setInt(4, car.getUsedInKilometer());
             preparedStatement.setString(5, car.getGearbox());
-            preparedStatement.setLong(6, car.getPrice());
+            preparedStatement.setBigDecimal(6, new BigDecimal(car.getPrice()));
             preparedStatement.setString(7, car.getPhoneNumber());
             preparedStatement.setString(8, car.getExplanation());
             preparedStatement.execute();
@@ -42,5 +42,4 @@ public class CarRegistration {
         }
         return id != -1;
     }
-
 }

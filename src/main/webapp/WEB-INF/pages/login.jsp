@@ -12,15 +12,15 @@
     <title>Login Page</title>
 </head>
 <body>
-<s:if test="hasActionErrors()">
-    <div class="errors">
-        <s:actionerror/>
-    </div>
+<div>
+    <s:if test="hasActionErrors()">
+    <s:actionerror/>
+</div>
+<div>
     <s:if test="hasActionMessages()">
-        <div class="welcome">
-            <s:actionmessage/>
-        </div>
-    </s:if>
+    <s:actionmessage/>
+</div>
+</s:if>
 </s:if>
 <form action="/login/login.action" method="get">
     <div>

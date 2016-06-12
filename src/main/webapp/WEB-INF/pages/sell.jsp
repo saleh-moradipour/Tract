@@ -11,17 +11,19 @@
 <html>
 <head>
     <title>Sell Page</title>
+    <style>
+        body {
+            background: #cccccc;
+        }
+    </style>
+
 </head>
 <body>
 <s:if test="hasActionErrors()">
-    <div class="errors">
-        <s:actionerror/>
-    </div>
-    <s:if test="hasActionMessages()">
-        <div class="success">
-            <s:actionmessage/>
-        </div>
-    </s:if>
+    <s:actionerror/>
+</s:if>
+<s:if test="hasActionMessages()">
+    <s:actionmessage/>
 </s:if>
 
 <form action="/sell/sell.action" method="get">
@@ -30,11 +32,11 @@
             Car name :
             <select name="carName" size="1">
                 <option></option>
-                <option value="benz">Benz</option>
-                <option value="ford">Ford</option>
+                <option value="Benz">Benz</option>
+                <option value="Ford">Ford</option>
                 <option value="Bmw">Bmw</option>
-                <option value="porsh">Porsh</option>
-                <option value="bently">Bently</option>
+                <option value="Porcsh">Porsh</option>
+                <option value="Bently">Bently</option>
             </select>
         </p>
     </div>
@@ -47,9 +49,9 @@
         <p>
             Fuel :
             &nbsp;<select name="fuel" size="1">
-            <option value="benzin">Benzin</option>
-            <option value="gaz">Gaz</option>
-            <option value="tofuel">Tow fuel</option>
+            <option value="Benzin">Benzin</option>
+            <option value="Gaz">Gaz</option>
+            <option value="To Fuel">Tow fuel</option>
         </select>
         </p>
     </div>
@@ -61,10 +63,10 @@
     <div>
         <p>
             Gierbox :
-            &nbsp;<select name="gearbox" size="1">
+            &nbsp;<select name="gearBox" size="1">
             <option></option>
-            <option value="manual">Manual</option>
-            <option value="automatic">Automatic</option>
+            <option value="<Manual">Manual</option>
+            <option value="Automatic">Automatic</option>
         </select>
         </p>
     </div>
@@ -82,10 +84,7 @@
         Input write to message :
     </div>
     <div>
-        <p>
-            <textarea name="message" rows="10" cols="50">
-            </textarea>
-        </p>
+        <input type="text" name="explanation" size="100">
     </div>
     <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Registration">

@@ -15,6 +15,7 @@ public class ConnectionManager {
     public static ConnectionManager connectionManager;
     private Connection connection;
     private Properties prop = new Properties();
+
     private ConnectionManager() {
         InputStream input = null;
         try {
@@ -45,8 +46,7 @@ public class ConnectionManager {
         System.out.println("MySQL JDBC Driver Registered!");
 
         try {
-            connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/" + prop.get("dbName").toString() ,prop.get("username").toString(), prop.get("pass").toString());
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + prop.get("dbName").toString(), prop.get("username").toString(), prop.get("pass").toString());
         } catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
             e.printStackTrace();

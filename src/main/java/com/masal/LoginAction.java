@@ -55,4 +55,5 @@ public class LoginAction extends ActionSupport {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
 }
