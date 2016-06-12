@@ -14,6 +14,9 @@
         </action>
     </package>
     <package name="links" namespace="/operation" extends="struts-default">
+        <action name="sell">
+            <result name="success">/WEB-INF/pages/sell.jsp</result>
+        </action>
         <action name="select" class="com.masal.show_products.ShowProducts" method="selFrom">
             <result name="success">/WEB-INF/pages/select.jsp</result>
         </action>
