@@ -29,12 +29,12 @@ public class ShowProducts extends ActionSupport {
         return SUCCESS;
     }
 
-    int modelOf1 = -1;
-    int modelUp1 = -1;
-    int useInKilometerOf1 = -1;
-    int useInKilometerUp1 = -1;
-    BigDecimal priceOf1 = new BigDecimal(-1);
-    BigDecimal priceUp1 = new BigDecimal(-1);
+    int modelOf1;
+    int modelUp1;
+    int useInKilometerOf1;
+    int useInKilometerUp1;
+    BigDecimal priceOf1;
+    BigDecimal priceUp1;
 
     public String searchCar() {
         if (carName == null || carName.equals("")) {
