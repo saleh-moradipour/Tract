@@ -84,7 +84,7 @@
         Input write to message :
     </div>
     <div>
-        <input type="text" name="explanation" size="100">
+        <txtarea type="text" name="explanation" size="100"/>
     </div>
     <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Registration">

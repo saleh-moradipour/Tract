@@ -39,12 +39,12 @@
             <option value="bently">Bently</option>
         </select>
     </p>
-    <p>Price Of: <input type="text" name="priceOf">&nbsp;&nbsp;&nbsp;Price Up:<input type="text" name="priceUp"></p>
+    <p>Price From: <input type="text" name="priceOf">&nbsp;&nbsp;&nbsp;Price To:<input type="text" name="priceUp"></p>
 
-    <p>Model Of: <input type="text" name="modelOf">&nbsp;&nbsp;&nbsp;Model Up:<input type="text" name="modelUp"></p>
+    <p>Model From: <input type="text" name="modelOf">&nbsp;&nbsp;&nbsp;Model To:<input type="text" name="modelUp"></p>
 
-    <p>Of use in kilometer: <input type="text" name="usekilometerOf">&nbsp;&nbsp;&nbsp;Up use in kilometer:<input
-            type="text" name="usekilometerUp"></p>
+    <p>Use In Kilometer Form: <input type="text" name="usedInKilometerOf">&nbsp;&nbsp;&nbsp;Use In Kilometer To:<input
+            type="text" name="usedInKilometerUp"></p>
 
     <p><input type="submit" value="Search"></p>
 </form>
