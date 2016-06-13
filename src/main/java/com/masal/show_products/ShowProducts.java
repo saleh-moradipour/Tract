@@ -66,11 +66,11 @@ public class ShowProducts extends ActionSupport {
                 return ERROR;
             }
             if (modelOf1 < 1949) {
-                addActionError("Error,'From Model.");
+                addActionError("Error,'From Model' fewer 1949.");
                 return ERROR;
             }
             if (modelUp1 > 2016) {
-                addActionError("Error,'To Model'.");
+                addActionError("Error,'To Model' more 2016.");
                 return ERROR;
             }
         }
@@ -91,7 +91,7 @@ public class ShowProducts extends ActionSupport {
             }
         }
         if (priceOf != null && !priceOf.equals("") && priceUp != null && !priceUp.equals("")) {
-            if (modelOf1 > modelUp1) {
+            if (priceOf1.compareTo(priceUp1) > priceUp1.compareTo(priceOf1)) {
                 addActionError("Error,'Price From' Smaller is 'Price To'.");
                 return ERROR;
             }
