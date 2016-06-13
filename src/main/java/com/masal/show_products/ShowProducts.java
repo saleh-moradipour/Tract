@@ -38,72 +38,85 @@ public class ShowProducts extends ActionSupport {
 
     public String searchCar() {
         if (carName == null || carName.equals("")) {
-            addActionError("Plase enter car name");
+            addActionError("Please enter car name");
             return ERROR;
         }
-        if (modelOf == null || modelOf.equals("") || modelUp == null || modelUp.equals("") || fuel == null || fuel.equals("") || usedInKilometerOf == null || usedInKilometerOf.equals("") || usedInKilometerUp == null || usedInKilometerUp.equals("") || gearBox == null || gearBox.equals("") || priceOf == null || priceOf.equals("")) {
-            return SUCCESS;
+//        in if paeiniye yani karbar meghdare filde modelOf ra vared karde ast va khali nist.
+        if (modelOf != null && !modelOf.equals("")) {
+            try {
+                modelOf1 = Integer.parseInt(modelOf);
+            } catch (NumberFormatException e) {
+                addActionError("Meghdare filde 'Model From' eshtebah ast.");
+            }
         }
-        if (modelOf1 > modelUp1) {
-            addActionError("Error,'From Model' Small 'To Model'.");
-            return ERROR;
+        if (modelUp != null && !modelUp.equals("")) {
+            try {
+                modelUp1 = Integer.parseInt(modelUp);
+            } catch (NumberFormatException e) {
+                addActionError("Meghdare filde 'Model To' eshtebah ast.");
+            }
         }
-        if (modelUp.length() > 4 || modelOf.length() > 4) {
-            addActionError("Error ,lenght 'Model Of' or 'Model Up'.");
-            return ERROR;
+        if (modelOf != null && !modelOf.equals("") && modelUp != null && !modelUp.equals("")) {
+            if (modelOf1 > modelUp1) {
+                addActionError("Error,'From Model' Smaller is 'To Model'.");
+                return ERROR;
+            }
+            if (modelUp.length() > 4 || modelOf.length() > 4) {
+                addActionError("Error ,lenght 'Model Of' or 'Model Up'.");
+                return ERROR;
+            }
+            if (modelOf1 < 1949) {
+                addActionError("Error,'From Model.");
+                return ERROR;
+            }
+            if (modelUp1 > 2016) {
+                addActionError("Error,'To Model'.");
+                return ERROR;
+            }
         }
-        try {
-            modelOf1 = Integer.parseInt(modelOf);
-        } catch (NumberFormatException e) {
-            addActionError("Error,From Model");
-            return ERROR;
+        if (priceOf != null && !priceOf.equals("")) {
+            try {
+                priceOf1 = new BigDecimal(priceOf);
+            } catch (Exception e) {
+                addActionError("Meghdare filde 'Price From' eshtebah ast.");
+                return ERROR;
+            }
         }
-        try {
-            modelUp1 = Integer.parseInt(modelUp);
-        } catch (NumberFormatException e) {
-            addActionError("Error,To Model");
-            return ERROR;
+        if (priceUp != null && !priceUp.equals("")) {
+            try {
+                priceUp1 = new BigDecimal(priceUp);
+            } catch (Exception e) {
+                addActionError("Meghdare filde 'Price To' eshtebah ast.");
+                return ERROR;
+            }
         }
-        if (modelOf1 < 1949) {
-            addActionError("Error,'From Model.");
-            return ERROR;
+        if (priceOf != null && !priceOf.equals("") && priceUp != null && !priceUp.equals("")) {
+            if (modelOf1 > modelUp1) {
+                addActionError("Error,'Price From' Smaller is 'Price To'.");
+                return ERROR;
+            }
         }
-        if (modelUp1 > 2016) {
-            addActionError("Error,'To Model'.");
-            return ERROR;
+        if (usedInKilometerOf != null && !usedInKilometerOf.equals("")) {
+            try {
+                useInKilometerOf1 = Integer.parseInt(usedInKilometerOf);
+            } catch (NumberFormatException e) {
+                addActionError("Meghdar 'Use In Kilometer From' eshtebah ast.");
+                return ERROR;
+            }
         }
-        if (priceOf1.compareTo(priceUp1) > priceUp1.compareTo(priceOf1)) {
-            addActionError("Error,'From price' Small 'To price'.");
-            return ERROR;
+        if (usedInKilometerUp != null && !usedInKilometerUp.equals("")) {
+            try {
+                useInKilometerUp1 = Integer.parseInt(usedInKilometerUp);
+            } catch (NumberFormatException e) {
+                addActionError("Meghdar 'Use In Kilometer To' eshtebah ast.");
+                return ERROR;
+            }
         }
-        try {
-            priceOf1 = new BigDecimal(priceOf);
-        } catch (NumberFormatException e) {
-            addActionError("Error,From Price");
-            return ERROR;
-        }
-        try {
-            priceUp1 = new BigDecimal(priceUp);
-        } catch (NumberFormatException e) {
-            addActionError("Error,To Price");
-            return ERROR;
-        }
-        if (useInKilometerOf1 > useInKilometerUp1) {
-            addActionError("Error,'From Use In Kilometer' Small 'To Use In Kilometer'.");
-            return ERROR;
-        }
-        try {
-            useInKilometerOf1 = Integer.parseInt(usedInKilometerOf);
-        } catch (NumberFormatException e) {
-            addActionError("Error,From Use In Kilometer");
-            return ERROR;
-        }
-        try {
-            useInKilometerUp1 = Integer.parseInt(usedInKilometerUp);
-        } catch (NumberFormatException e) {
-            addActionError("Error,To" +
-                    " Use In Kilometer");
-            return ERROR;
+        if (usedInKilometerOf != null && !usedInKilometerOf.equals("") && usedInKilometerUp != null && !usedInKilometerUp.equals("")) {
+            if (useInKilometerOf1 > useInKilometerUp1) {
+                addActionError("Error,'Use In Kilometer From' Smaller is 'Use In Kilometer To'.");
+                return ERROR;
+            }
         }
         return SUCCESS;
     }
