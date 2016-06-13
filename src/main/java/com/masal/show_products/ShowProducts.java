@@ -91,7 +91,7 @@ public class ShowProducts extends ActionSupport {
             }
         }
         if (priceOf != null && !priceOf.equals("") && priceUp != null && !priceUp.equals("")) {
-            if (priceOf1.compareTo(priceUp1) > priceUp1.compareTo(priceOf1)) {
+            if (priceOf1.compareTo(priceUp1) > 0) {
                 addActionError("Error,'Price From' Smaller is 'Price To'.");
                 return ERROR;
             }
