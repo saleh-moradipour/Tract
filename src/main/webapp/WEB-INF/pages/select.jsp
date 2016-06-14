@@ -31,7 +31,7 @@
     <p>
         Car name :
         <select name="carName" size="1" value="${requestScope.carName}">
-        <option></option>
+            <option></option>
             <option value="benz">Benz</option>
             <option value="ford">Ford</option>
             <option value="Bmw">Bmw</option>
