@@ -25,7 +25,7 @@ public class ShowProducts extends ActionSupport {
 
     public String selFrom() {
         CarSelection carSelection = new CarSelection();
-        carList = carSelection.registerCar();
+        carList = carSelection.selectAllCars();
         return SUCCESS;
     }
 
@@ -118,6 +118,8 @@ public class ShowProducts extends ActionSupport {
                 return ERROR;
             }
         }
+        CarSelection carSelection = new CarSelection();
+        carList = carSelection.selectCustomCars(carName, modelOf, modelUp, priceOf, priceUp, usedInKilometerOf, usedInKilometerUp);
         return SUCCESS;
     }
 

@@ -39,7 +39,7 @@
             <option value="bently">Bently</option>
         </select>
     </p>
-    <p>Model From: <input type="text" name="modelOf">&nbsp;&nbsp;&nbsp;Model To:<input type="text" name="modelUp"></p>
+    <p>Model From: <input type="text" name="modelOf" value="${requestScope.modelOf}">&nbsp;&nbsp;&nbsp;Model To:<input type="text" name="modelUp"></p>
 
     <p>Price From: <input type="text" name="priceOf">&nbsp;&nbsp;&nbsp;Price To:<input type="text" name="priceUp"></p>
 
