@@ -30,8 +30,8 @@
 
     <p>
         Car name :
-        <select name="carName" size="1">
-            <option></option>
+        <select name="carName" size="1" value="${requestScope.carName}">
+        <option></option>
             <option value="benz">Benz</option>
             <option value="ford">Ford</option>
             <option value="Bmw">Bmw</option>
@@ -39,12 +39,14 @@
             <option value="bently">Bently</option>
         </select>
     </p>
-    <p>Model From: <input type="text" name="modelOf" value="${requestScope.modelOf}">&nbsp;&nbsp;&nbsp;Model To:<input type="text" name="modelUp"></p>
+    <p>Model From: <input type="text" name="modelOf" value="${requestScope.modelOf}">&nbsp;&nbsp;&nbsp;Model To:<input
+            type="text" name="modelUp" value="${requestScope.modelUp}"></p>
 
-    <p>Price From: <input type="text" name="priceOf">&nbsp;&nbsp;&nbsp;Price To:<input type="text" name="priceUp"></p>
+    <p>Price From: <input type="text" name="priceOf" value="${requestScope.priceOf}">&nbsp;&nbsp;&nbsp;Price To:<input
+            type="text" name="priceUp" value="${requestScope.priceUp}"></p>
 
-    <p>Use In Kilometer Form: <input type="text" name="usedInKilometerOf">&nbsp;&nbsp;&nbsp;Use In Kilometer To:<input
-            type="text" name="usedInKilometerUp"></p>
+    <p>Use In Kilometer Form: <input type="text" name="usedInKilometerOf" value="${requestScope.usedInKilometerOf}">&nbsp;&nbsp;&nbsp;Use
+        In Kilometer To:<input type="text" name="usedInKilometerUp" value="${requestScope.usedInKilometerUp}"></p>
 
     <p><input type="submit" value="Search"></p>
 </form>

@@ -51,11 +51,26 @@ public class CarSelection {
 
     }
 
-    public ArrayList selectCustomCars(String carName, String modelOf, String modelUp, String priceOf, String priceUp, String usedInKilometerOf, String usedInKilometerUp) {
+    public ArrayList selectCustomCars(String carName, String modelOf, String modelUp, String priceOf, String priceUp, String usedInKilometerOf, String usedInKilometerUp, String explanation) {
         ArrayList list = new ArrayList();
         String sql = "SELECT name, model, fuel,used_in_kilometer, gearbox, price, phone_number, description FROM CAR where name=\"" + carName + "\"";
         if (modelOf != null && !modelOf.equals("")) {
             sql = sql + " and model > " + modelOf;
+        }
+        if (modelUp != null && !modelUp.equals("")) {
+            sql = sql + " and model< " + modelUp;
+        }
+        if (priceOf != null && !priceOf.equals("")) {
+            sql = sql + " and price> " + priceOf;
+        }
+        if (priceUp != null && !priceOf.equals("")) {
+            sql = sql + " and price< " + priceUp;
+        }
+        if (usedInKilometerOf != null && !usedInKilometerOf.equals("")) {
+            sql = sql + " and used_in_kilometer >" + usedInKilometerOf;
+        }
+        if (usedInKilometerUp != null && !usedInKilometerUp.equals("")) {
+            sql = sql + " and used_in_kilometer< " + usedInKilometerUp;
         }
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         Connection connection = connectionManager.getConnection();
@@ -71,7 +86,7 @@ public class CarSelection {
                 String gearbox = resultSet.getString("gearbox");
                 long price = resultSet.getLong("price");
                 String phone_number = resultSet.getString("phone_number");
-                String explanation = resultSet.getString("description");
+                explanation = resultSet.getString("description");
                 car1.setCarName(name);
                 car1.setModel(model);
                 car1.setFuel(fuel);
