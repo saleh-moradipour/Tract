@@ -51,7 +51,7 @@ public class CarSelection {
 
     }
 
-    public ArrayList selectCustomCars(String carName, String modelOf, String modelUp, String priceOf, String priceUp, String usedInKilometerOf, String usedInKilometerUp, String explanation) {
+    public ArrayList selectCustomCars(String carName, String modelOf, String modelUp, String priceOf, String priceUp, String usedInKilometerOf, String usedInKilometerUp, String gearBox, String explanation) {
         ArrayList list = new ArrayList();
         String sql = "SELECT name, model, fuel,used_in_kilometer, gearbox, price, phone_number, description FROM CAR where name=\"" + carName + "\"";
         if (modelOf != null && !modelOf.equals("")) {
@@ -71,6 +71,9 @@ public class CarSelection {
         }
         if (usedInKilometerUp != null && !usedInKilometerUp.equals("")) {
             sql = sql + " and used_in_kilometer< " + usedInKilometerUp;
+        }
+        if (gearBox != null && !gearBox.equals("")) {
+            sql = sql + " and gearbox=\"" + gearBox + "\"";
         }
         ConnectionManager connectionManager = ConnectionManager.getInstance();
         Connection connection = connectionManager.getConnection();

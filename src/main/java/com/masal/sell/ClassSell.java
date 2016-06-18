@@ -50,6 +50,7 @@ public class ClassSell extends ActionSupport {
         car.setPrice(price1.longValue());
         car.setPhoneNumber(phoneNumber);
         car.setExplanation(explanation);
+
         if (carRegistration.registerCar(car)) {
             return SUCCESS;
         }

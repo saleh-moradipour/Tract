@@ -34,6 +34,10 @@
     <div>
         <input type="submit" value="login">
     </div>
+    <br>
+    <br>
+
+    <div><a href="${ctx}/operation/registration.action"> Registration </a></div>
 </form>
 </body>
 </html>

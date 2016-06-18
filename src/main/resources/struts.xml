@@ -24,6 +24,13 @@
             <result name="success">/WEB-INF/pages/select.jsp</result>
             <result name="error">/WEB-INF/pages/select.jsp</result>
         </action>
+        <action name="registration">
+            <result name="success">/WEB-INF/pages/registration.jsp</result>
+        </action>
+        <action name="join" class="com.masal.register.ClassPerson" method="m1">
+            <result name="success">/WEB-INF/pages/registration.jsp</result>
+            <result name="error">/WEB-INF/pages/registration.jsp</result>
+        </action>
     </package>
     <package name="sell" namespace="/sell" extends="struts-default">
         <action name="sell" class="com.masal.sell.ClassSell" method="m1">

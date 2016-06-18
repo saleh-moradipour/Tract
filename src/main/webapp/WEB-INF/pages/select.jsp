@@ -30,7 +30,7 @@
 
     <p>
         Car name :
-        <select name="carName" size="1" value="${requestScope.carName}">
+        <select name="carName" size="1">
             <option></option>
             <option value="benz">Benz</option>
             <option value="ford">Ford</option>
@@ -38,6 +38,14 @@
             <option value="porsh">Porsh</option>
             <option value="bently">Bently</option>
         </select>
+    </p>
+    <p>
+        Gierbox :
+        &nbsp;<select name="gearBox" size="1">
+        <option></option>
+        <option value="<Manual">Manual</option>
+        <option value="Automatic">Automatic</option>
+    </select>
     </p>
     <p>Model From: <input type="text" name="modelOf" value="${requestScope.modelOf}">&nbsp;&nbsp;&nbsp;Model To:<input
             type="text" name="modelUp" value="${requestScope.modelUp}"></p>

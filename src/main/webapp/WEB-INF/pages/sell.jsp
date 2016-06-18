@@ -80,12 +80,11 @@
             Phone number :&nbsp;<input type="text" name="phoneNumber">
         </p>
     </div>
-    <div>
-        Input write to message :
-    </div>
-    <div>
-        <txtarea type="text" name="explanation" size="100"/>
-    </div>
+    <p>
+        Input Write Message:
+        &nbsp;&nbsp;&nbsp; <textarea name="explanation" type="text" size="10"></textarea>
+    </p>
+
     <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Registration">
     </div>

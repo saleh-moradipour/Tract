@@ -119,7 +119,7 @@ public class ShowProducts extends ActionSupport {
             }
         }
         CarSelection carSelection = new CarSelection();
-        carList = carSelection.selectCustomCars(carName, modelOf, modelUp, priceOf, priceUp, usedInKilometerOf, usedInKilometerUp, explanation);
+        carList = carSelection.selectCustomCars(carName, modelOf, modelUp, priceOf, priceUp, usedInKilometerOf, usedInKilometerUp, gearBox, explanation);
         return SUCCESS;
     }
 
